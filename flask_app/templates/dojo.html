@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos And Ninjas</title>
+</head>
+<body>
+    <h1>Welcome to the Dojos and Ninjas App</h1>
+
+    <p></p>
+    <p></p>
+
+    <h2>New Dojo</h2>
+    <form action="/createDojo" method="POST">
+        <label for="dojoname">Dojo Name:</label>
+        <input type="text" name="dojoname">
+        <input type="submit" value="Add Dojo">
+    </form>
+
+
+    <p></p>
+    <p></p>
+
+    <h2>All Dojos</h2>
+    <ul>
+        {% for one_dojo in all_dojos %}
+        <li>
+            <a href="/Dojos/{{one_dojo.id}}">{{one_dojo.dojo_name}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <p></p>
+    <p></p>
+    <h3><a href="/Ninjas">Create Ninja</a></h3>
+    
+
+</body>
+</html>
